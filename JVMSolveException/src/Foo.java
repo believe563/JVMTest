@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+
 public class Foo implements AutoCloseable{
 	private final String name;
 
@@ -12,11 +14,11 @@ public class Foo implements AutoCloseable{
 	}
 	
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws FileNotFoundException{
 		try(Foo foo0=new Foo("Foo0");
 			Foo foo1=new Foo("Foo1");
 			Foo foo2=new Foo("Foo2")){
-			throw new ArrayIndexOutOfBoundsException("Initial");
+			throw new FileNotFoundException("Initial");
 		}
 	}
 	
