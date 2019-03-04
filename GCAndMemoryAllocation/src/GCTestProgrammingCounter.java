@@ -5,7 +5,7 @@
  * 详情可参看网页 https://www.cnblogs.com/qlqwjy/p/7929414.html 中的对应参数列表
  * 
  * @author belie
- *
+ * 引用计数算法的实验
  */
 public class GCTestProgrammingCounter {
 	public Object instance=null;
@@ -43,6 +43,8 @@ Heap
     rw space 12288K,  52% used [0x39b40000, 0x3a18dd28, 0x3a18de00, 0x3a740000)
 第二行Full GC后面2048K->401K,说明虚拟机没有因为这两个对象相互引用就不回收它们，侧面说明虚拟机不是通过引用计数算法来判断对象是否存活
  */
+
+
 /**
  * java8的运行结果：
  * [GC (System.gc()) [PSYoungGen: 6092K->680K(38400K)] 6092K->688K(125952K), 0.0085903 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
@@ -57,5 +59,5 @@ Heap
  Metaspace       used 2777K, capacity 4486K, committed 4864K, reserved 1056768K
   class space    used 301K, capacity 386K, committed 512K, reserved 1048576K
  * 
- * 
+ * 关于PSYoungGen的问题请看：https://bbs.csdn.net/topics/210064791
  */
